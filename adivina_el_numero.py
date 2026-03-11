@@ -6,7 +6,6 @@
 #   - openpyxl  --> pip install openpyxl   (leer y escribir Excel)
 #   - matplotlib --> pip install matplotlib (mostrar gráficos)
 #   - random    --> ya incluido en Python
-#   - os        --> ya incluido en Python
 #
 # FICHEROS QUE CREA EL PROGRAMA:
 #   - Estadisticas.xlsx
@@ -24,14 +23,12 @@ import matplotlib.pyplot as plt
 # ------------------------------------------------------------
 
 def mostrar_menu():
-    print("\n========================================")
     print("    BIENVENIDO A 'ADIVINA EL NÚMERO'")
     print("========================================")
     print("1. Partida modo solitario")
     print("2. Partida 2 jugadores")
     print("3. Estadística")
     print("4. Salir")
-    print("========================================")
 
 
 def mostrar_dificultad():
@@ -41,9 +38,7 @@ def mostrar_dificultad():
     print("3. Difícil ( 5 intentos)")
 
 
-# ------------------------------------------------------------
 # FUNCIONES DE VALIDACIÓN
-# ------------------------------------------------------------
 
 def validar_opcion(minimo, maximo):
     while True:
@@ -77,9 +72,7 @@ def pedir_nombre():
         print("El nombre no puede estar vacío")
 
 
-# ------------------------------------------------------------
 # FUNCIONES DEL EXCEL (módulo propio de estadísticas)
-# ------------------------------------------------------------
 
 def obtener_ruta():
     carpeta = r"C:\EjerciciosPython"
@@ -168,9 +161,7 @@ def mostrar_estadisticas():
     plt.show()
 
 
-# ------------------------------------------------------------
 # FUNCIÓN PRINCIPAL DE JUEGO
-# ------------------------------------------------------------
 
 def jugar(modo, dificultad):
     if dificultad == 1:
@@ -214,9 +205,7 @@ def jugar(modo, dificultad):
     return nombre, "Perdió", intentos_usados
 
 
-# ------------------------------------------------------------
 # MENÚ PRINCIPAL
-# ------------------------------------------------------------
 
 def main():
     opcion = 0
