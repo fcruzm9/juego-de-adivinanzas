@@ -9,7 +9,7 @@
 #
 # FICHEROS QUE CREA EL PROGRAMA:
 #   - Estadisticas.xlsx
-#   - Ruta: C:\EjerciciosPython\Estadisticas.xlsx
+#   - Ruta: misma carpeta que este script
 # ============================================================
 
 import random
@@ -18,9 +18,7 @@ import openpyxl
 import matplotlib.pyplot as plt
 
 
-# ------------------------------------------------------------
 # FUNCIONES DE MENÚ
-# ------------------------------------------------------------
 
 def mostrar_menu():
     print("    BIENVENIDO A 'ADIVINA EL NÚMERO'")
@@ -75,8 +73,7 @@ def pedir_nombre():
 # FUNCIONES DEL EXCEL (módulo propio de estadísticas)
 
 def obtener_ruta():
-    carpeta = r"C:\EjerciciosPython"
-    os.makedirs(carpeta, exist_ok=True)
+    carpeta = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(carpeta, "Estadisticas.xlsx")
 
 
@@ -119,7 +116,7 @@ def mostrar_estadisticas():
     hoja = libro.active
 
     filas = list(hoja.iter_rows(values_only=True))
-    datos = filas[1:]  # quitar la cabecera
+    datos = filas[1:] 
 
     if len(datos) == 0:
         print("\nNo hay partidas registradas todavía")
