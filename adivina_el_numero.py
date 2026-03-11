@@ -9,7 +9,7 @@
 #
 # FICHEROS QUE CREA EL PROGRAMA:
 #   - Estadisticas.xlsx
-#   - Ruta: misma carpeta que este script
+#   - Ruta: C:\EjerciciosPython\Estadisticas.xlsx
 # ============================================================
 
 import random
@@ -73,7 +73,7 @@ def pedir_nombre():
 # FUNCIONES DEL EXCEL (módulo propio de estadísticas)
 
 def obtener_ruta():
-    carpeta = os.path.dirname(os.path.abspath(__file__))
+    carpeta = r"C:\EjerciciosPython"
     return os.path.join(carpeta, "Estadisticas.xlsx")
 
 
