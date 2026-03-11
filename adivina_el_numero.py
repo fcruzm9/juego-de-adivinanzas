@@ -10,8 +10,7 @@
 #
 # FICHEROS QUE CREA EL PROGRAMA:
 #   - Estadisticas.xlsx
-#   - Ruta Windows : C:\EjerciciosPython\Estadisticas.xlsx
-#   - Ruta Mac/Linux: ~/EjerciciosPython/Estadisticas.xlsx
+#   - Ruta: C:\EjerciciosPython\Estadisticas.xlsx
 # ============================================================
 
 import random
@@ -83,10 +82,7 @@ def pedir_nombre():
 # ------------------------------------------------------------
 
 def obtener_ruta():
-    if os.name == "nt":
-        carpeta = r"C:\EjerciciosPython"
-    else:
-        carpeta = os.path.join(os.path.expanduser("~"), "EjerciciosPython")
+    carpeta = r"C:\EjerciciosPython"
     os.makedirs(carpeta, exist_ok=True)
     return os.path.join(carpeta, "Estadisticas.xlsx")
 
@@ -241,7 +237,7 @@ def main():
         if opcion == 1 or opcion == 2:
             mostrar_dificultad()
             dificultad = validar_opcion(1, 3)
-            os.system("cls" if os.name == "nt" else "clear")
+            os.system("cls")
             nombre, resultado, intentos = jugar(opcion, dificultad)
             guardar_partida(nombre, opcion, dificultad, resultado, intentos)
 
@@ -253,4 +249,5 @@ def main():
             print("\n¡Hasta la próxima!\n")
 
 
-main()
+if __name__ == "__main__":
+    main()
