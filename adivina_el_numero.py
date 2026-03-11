@@ -162,18 +162,9 @@ def mostrar_estadisticas():
             dificil += 1
 
     # Mostrar gráficos
-    fig, ejes = plt.subplots(1, 2, figsize=(10, 5))
-    fig.suptitle("Estadísticas - Adivina el Número", fontsize=13)
-
-    ejes[0].bar(["Ganaron", "Perdieron"], [gano, perdio], color=["green", "red"])
-    ejes[0].set_title("Resultados globales")
-    ejes[0].set_ylabel("Partidas")
-
-    ejes[1].bar(["Fácil", "Medio", "Difícil"], [facil, medio, dificil], color=["blue", "orange", "red"])
-    ejes[1].set_title("Partidas por dificultad")
-    ejes[1].set_ylabel("Partidas")
-
-    plt.tight_layout()
+    fig, ejes = plt.subplots(1, 2)
+    ejes[0].bar(["Ganaron", "Perdieron"], [gano, perdio])
+    ejes[1].bar(["Fácil", "Medio", "Difícil"], [facil, medio, dificil])
     plt.show()
 
 
